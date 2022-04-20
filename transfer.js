@@ -10,6 +10,9 @@ async function init(){
         window.location.pathname = "/index.html";
     }
 
+    web3 = await Moralis.Web3.enable();
+    let accounts = await web3.eth.getAccounts();
+
     const urlParams = new URLSearchParams(window.location.search);
     const nftId = urlParams.get("nftId");
     document.getElementById("token_id_input").value = nftId;
